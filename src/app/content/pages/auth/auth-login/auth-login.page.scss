@@ -10,15 +10,21 @@ ion-content {
     .auth-content {
         height: 50vh;
         ion-list{
+            margin-top: -30px !important;
             background-color: red !important;
             border-radius: 10px;
             width: 330px;
             margin: auto;
+            --inner-padding-top: 20px;
             ion-item{
              width: 90%;
              margin: auto;
              padding-top: 15px;
              padding-bottom: 15px;
+             --padding-end: 0px;
+             --inner-padding-end: 0px;
+             --padding-start: 0px;
+             --inner-padding-start: 0px;
              ion-label {
                 font-size: 0.4cm;
              }
