@@ -1,9 +1,37 @@
-ion-content{
+ion-content {
     .image{
         height: 50vh;
         background-image: url('./../../../../../assets/images/backgroud.png');
         background-size:     cover;                      
         background-repeat:   no-repeat;
         background-position: center center;  
+        opacity: 0.9;
+    }
+    .auth-content {
+        height: 50vh;
+        ion-list{
+            background-color: red !important;
+            border-radius: 10px;
+            width: 330px;
+            margin: auto;
+            ion-item{
+             width: 90%;
+             margin: auto;
+             padding-top: 15px;
+             padding-bottom: 15px;
+             ion-label {
+                font-size: 0.4cm;
+             }
+             ion-checkbox{
+                 padding: 0;
+             }
+             .forgot-password{
+                 font-size: 0.3cm;
+             }
+             .remember-password{
+                font-size: 0.3cm;
+             }
+            }
+        }
     }
 }
