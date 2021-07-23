@@ -31,29 +31,32 @@ ion-content {
                          --padding-start: 0px;
                          --inner-padding-start: 0px;
                          //Tira linha o ion-item
-                         --highlight-height: 0;
+                         //--highlight-height: 0;
                          ion-label {
                             font-size: 0.4cm;
                             color: $color-medium-shade;
                          }
                          ion-checkbox{
                              padding: 0;
-                             margin-top: -12px;
+                            // margin-top: -12px;
                          }
                          ion-input {
                             --padding-bottom: 0;
                             --padding-top: 0;
+      
                          }
                          .forgot-password{
                              font-size: 0.3cm;
-                             margin-top: -30px;
+                             //margin-top: -30px;
                              text-decoration: none !important;
                              color: $color-medium-shade;
+                             font-weight: 500;
                          }
                          .remember-password{
                             font-size: 0.3cm !important;
                             padding-left: 10px;
-                            margin-top: -20px;
+                            font-weight: 500;
+                            //margin-top: -20px;
             
                          }
                         }
