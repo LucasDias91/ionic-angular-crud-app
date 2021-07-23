@@ -1,43 +1,91 @@
+$color-medium-shade: var(--ion-color-medium-shade);
+
 ion-content {
-    .image{
-        height: 50vh;
-        background-image: url('./../../../../../assets/images/backgroud.png');
-        background-size:     cover;                      
-        background-repeat:   no-repeat;
-        background-position: center center;  
-        opacity: 0.9;
-    }
-    .auth-content {
-        height: 50vh;
-        ion-list{
-            margin-top: -30px !important;
-            background-color: red !important;
-            border-radius: 10px;
-            width: 330px;
-            margin: auto;
-            --inner-padding-top: 20px;
-            ion-item{
-             width: 90%;
-             margin: auto;
-             padding-top: 15px;
-             padding-bottom: 15px;
-             --padding-end: 0px;
-             --inner-padding-end: 0px;
-             --padding-start: 0px;
-             --inner-padding-start: 0px;
-             ion-label {
-                font-size: 0.4cm;
-             }
-             ion-checkbox{
-                 padding: 0;
-             }
-             .forgot-password{
-                 font-size: 0.3cm;
-             }
-             .remember-password{
-                font-size: 0.3cm;
-             }
+    ion-grid{
+        ion-row{
+            ion-col{
+                .image{
+                    height: 50vh;
+                    background-image: url('./../../../../../assets/images/backgroud.png');
+                    background-size:     cover;                      
+                    background-repeat:   no-repeat;
+                    background-position: center center;  
+                    opacity: 0.9;
+                }
+                .auth-content {
+                    height: 50vh;
+                    ion-list{
+                        margin-top: -5vh !important;
+                        box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+                        border-radius: 25px;
+                        width: 300px;
+                        margin: auto;
+                        --inner-padding-top: 20px;
+                        ion-item{
+                         width: 90%;
+                         margin: auto;
+                           padding-top: 15px;
+                           padding-bottom: 15px;
+                         --padding-end: 0px;
+                         --inner-padding-end: 0px;
+                         --padding-start: 0px;
+                         --inner-padding-start: 0px;
+                         //Tira linha o ion-item
+                         --highlight-height: 0;
+                         ion-label {
+                            font-size: 0.4cm;
+                            color: $color-medium-shade;
+                         }
+                         ion-checkbox{
+                             padding: 0;
+                             margin-top: -12px;
+                         }
+                         ion-input {
+                            --padding-bottom: 0;
+                            --padding-top: 0;
+                         }
+                         .forgot-password{
+                             font-size: 0.3cm;
+                             margin-top: -30px;
+                             text-decoration: none !important;
+                             color: $color-medium-shade;
+                         }
+                         .remember-password{
+                            font-size: 0.3cm !important;
+                            padding-left: 10px;
+                            margin-top: -20px;
+            
+                         }
+                        }
+                    }
+                    @media (max-height: 611px) {
+                        ion-list {
+                            margin-top: -13vh !important;
+                        }
+                    }
+                    .submit {
+                        width: 100%;
+                        text-align: center;
+                        margin-top: -25px;
+                        ion-button {
+                            width: 250px;
+                            min-height: 40px;
+                      
+                        }
+                    }
+                    .register {
+                        width: 100%;
+                        text-align: center;
+                        ion-button {
+                            width: 250px;
+                            min-height: 40px;
+                      
+                        }
+                    }
+                }
             }
         }
     }
+   
 }
+
