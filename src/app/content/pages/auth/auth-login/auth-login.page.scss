@@ -1,4 +1,5 @@
 $color-medium-shade: var(--ion-color-medium-shade);
+$color-warning-contrast: var(--ion-color-dark);
 
 ion-content {
     ion-grid{
@@ -31,7 +32,7 @@ ion-content {
                          --padding-start: 0px;
                          --inner-padding-start: 0px;
                          //Tira linha o ion-item
-                         //--highlight-height: 0;
+                         --highlight-height: 0;
                          ion-label {
                             font-size: 0.4cm;
                             color: $color-medium-shade;
@@ -82,6 +83,8 @@ ion-content {
                         ion-button {
                             width: 250px;
                             min-height: 40px;
+                            font-weight: 500;
+                            color: $color-warning-contrast;
                       
                         }
                     }
