@@ -63,6 +63,12 @@ ion-content {
             
                          }
                         }
+                        .email{
+                            padding-top: 30px;
+                        }
+                        .actions {
+                            margin-top: -30px; padding-bottom: 30px;
+                        }
                     }
                     @media (max-height: 611px) {
                         ion-list {
@@ -90,6 +96,16 @@ ion-content {
                         }
                     }
                 }
+                @media (max-height: 400px) {
+                    .image {
+                        height: 100vh;
+                    }
+                    .auth-content {
+                        height: 90vh;
+                        margin-top: 16vh;
+                    }
+                }
+                
             }
         }
     }
