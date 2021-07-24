@@ -124,6 +124,13 @@ ion-content {
    
 }
 
+.msg{
+    font-size: .3cm;
+    color: var(--ion-color-danger-tint);
+    text-align: center;
+    margin: auto;
+}
+
 @keyframes slide {
     from {
        opacity: 0;

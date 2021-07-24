@@ -11,7 +11,7 @@
               <div *ngIf="loadingAfterSubmit" class="centered">
                 <div class="loader"></div>
               </div>
-            
+           
               <ion-item class="email">
                 <ion-label  mode="md" position="stacked">Email:</ion-label>
                 <ion-input  [disabled]="loadingAfterSubmit" type="email"></ion-input>
@@ -21,9 +21,12 @@
                 <ion-input  [disabled]="loadingAfterSubmit" type="password"></ion-input>
               </ion-item>
               <ion-item class="actions" lines="none">
-                <ion-checkbox [disabled]="loadingAfterSubmit" mode="md"></ion-checkbox>
-                <ion-label class="remember-password">Lembrar senha</ion-label>
-                <a  href="javascript:void(0)" (click)="resetPassword()" class="forgot-password"> Esqueceu sua senha? </a>
+                <div class="msg" *ngIf="errorMsg">
+                {{errorMsg}}
+                </div>
+                <ion-checkbox [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
+                <ion-label class="remember-password"  [hidden]="errorMsg">Lembrar senha</ion-label>
+                <a  [hidden]="errorMsg"  href="javascript:void(0)" (click)="resetPassword()" class="forgot-password"> Esqueceu sua senha? </a>
               </ion-item>
             </ion-list>
             <div class="submit">

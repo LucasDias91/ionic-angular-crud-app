@@ -11,6 +11,7 @@ export class AuthLoginPage implements OnInit {
   resizeSubscription$: Subscription
   size: string = '12';
   loadingAfterSubmit: boolean = false;
+  errorMsg: string = '';
 
   constructor() { }
 
