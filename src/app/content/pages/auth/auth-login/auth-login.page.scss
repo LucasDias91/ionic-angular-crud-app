@@ -5,6 +5,7 @@ ion-content {
     ion-grid{
         ion-row{
             ion-col{
+              
                 .image{
                     height: 50vh;
                     background-image: url('./../../../../../assets/images/backgroud.png');
@@ -14,6 +15,7 @@ ion-content {
                     opacity: 0.9;
                 }
                 .auth-content {
+                    transform: translateX(20px);
                     height: 50vh;
                     ion-list{
                         margin-top: -5vh !important;
@@ -70,6 +72,7 @@ ion-content {
                         .actions {
                             margin-top: -30px; padding-bottom: 30px;
                         }
+
                     }
                     @media (max-height: 611px) {
                         ion-list {
@@ -96,6 +99,14 @@ ion-content {
                       
                         }
                     }
+                   // animations
+                    animation-name: slide;
+                    animation-duration: .3s;
+                    animation-timing-function: ease;
+                    animation-delay: 0s;
+                
+                    animation-direction: normal;
+                    animation-fill-mode: forwards;
                 }
                 @media (max-height: 400px) {
                     .image {
@@ -112,4 +123,16 @@ ion-content {
     }
    
 }
+
+@keyframes slide {
+    from {
+       opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 

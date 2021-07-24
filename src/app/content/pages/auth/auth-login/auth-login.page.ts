@@ -10,6 +10,7 @@ export class AuthLoginPage implements OnInit {
   resizeObservable$: Observable<Event>
   resizeSubscription$: Subscription
   size: string = '12';
+  loadingAfterSubmit: boolean = false;
 
   constructor() { }
 
@@ -26,7 +27,10 @@ export class AuthLoginPage implements OnInit {
   }
 
   login() {
-
+   this.loadingAfterSubmit = true;
+   setTimeout(()=>{
+     this.loadingAfterSubmit = false;
+   },3000)
   }
 
   register() {
