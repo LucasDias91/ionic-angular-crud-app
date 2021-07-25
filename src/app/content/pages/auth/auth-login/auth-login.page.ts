@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 
 @Component({
@@ -13,7 +14,7 @@ export class AuthLoginPage implements OnInit {
   loadingAfterSubmit: boolean = false;
   errorMsg: string = '';
 
-  constructor() { }
+  constructor(private navController: NavController) { }
 
   ngOnInit() {
     this.resizeObservable$ = fromEvent(window, 'resize')
@@ -35,7 +36,7 @@ export class AuthLoginPage implements OnInit {
   }
 
   register() {
-
+    this.navController.navigateForward(['auth/register'])
   }
 
   resetPassword() {

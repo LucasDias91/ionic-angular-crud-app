@@ -9,16 +9,16 @@ const routes: Routes = [
     component: AuthPage
   },
   {
-    path: 'auth-login',
-    loadChildren: () => import('./auth-login/auth-login.module').then( m => m.AuthLoginPageModule)
-  },
-  {
     path: '',
-    redirectTo: 'auth-login',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'auth-register',
+    path: 'login',
+    loadChildren: () => import('./auth-login/auth-login.module').then( m => m.AuthLoginPageModule)
+  },
+  {
+    path: 'register',
     loadChildren: () => import('./auth-register/auth-register.module').then( m => m.AuthRegisterPageModule)
   },
 ];
