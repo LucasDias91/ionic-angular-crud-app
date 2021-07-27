@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Register } from 'src/app/core/models/authentication/register';
 
 @Component({
   selector: 'app-auth-register',
@@ -24,6 +25,19 @@ export class AuthRegisterPage implements OnInit {
       password: [null,Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)]) ],
       confirm_password: [null,Validators.compose([Validators.required, Validators.minLength(4), Validators.maxLength(10)]) ],
     })
+  }
+
+  takePicture() {
+
+  }
+
+  onSubmit() {
+
+  }
+
+  prepareRegister() {
+    const _resgister = new Register();
+    
   }
 
 }

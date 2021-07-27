@@ -1,23 +1,32 @@
-<ion-header class="ion-no-border" translucent="true">
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="auth/login"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">
 
-<ion-content padding>
   <form [formGroup]="form">
-    <ion-list>
-      <ion-item lines="none" class="ion-no-padding">
-        <ion-avatar>
-          <img src="./../../../../../assets/images/no-user.jpg">
-        </ion-avatar>
-        <ion-button id="btn-avatar" fill="solid">
-          <ion-icon name="camera"></ion-icon>
-        </ion-button>
+    <ion-list mode="md" class="ion-no-padding">
+      <ion-item lines="none" class="ion-no-padding ion-text-wrap">
+        <ion-grid class="ion-no-padding">
+          <ion-row class="ion-no-padding">
+            <div class="header">
+            <ion-button fill="clear">
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </ion-button>
+            </div>
+          </ion-row>
+          <ion-row class="ion-text-center" style="margin-top: -60px">
+            <div class="content-avatar" (click)="takePicture()">
+              <ion-avatar>
+                <img src="./../../../../../assets/images/no-user.jpg">
+              </ion-avatar>
+              <ion-button id="btn-avatar" fill="solid">
+                <ion-icon name="camera"></ion-icon>
+              </ion-button>
+            </div>
+
+          </ion-row>
+      </ion-grid>
+   
+
       </ion-item>
-      <ion-item class="ion-no-padding">
+      <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
           <ion-col class="icon-content" size="2" class="ion-no-padding">
             <ion-icon name="person-outline"></ion-icon>
@@ -28,7 +37,7 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item class="ion-no-padding">
+      <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
           <ion-col size="2" class="ion-no-padding">
             <ion-icon name="mail-outline"></ion-icon>
@@ -39,7 +48,7 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item class="ion-no-padding">
+      <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
           <ion-col size="2" class="ion-no-padding">
             <ion-icon name="lock-closed-outline"></ion-icon>
@@ -50,7 +59,7 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item class="ion-no-padding">
+      <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
           <ion-col size="2" class="ion-no-padding">
             <ion-icon name="lock-closed-outline"></ion-icon>
@@ -61,8 +70,8 @@
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item style="padding-top: 20px; padding-right: 0px;" class="ion-no-padding ion-text-center"  lines="none">
-        <ion-button  id="btn-submit"  fill="solid" shape="round">
+      <ion-item style="padding-top: 30px; padding-right: 0px;" class="ion-no-padding ion-text-center item-form" lines="none">
+        <ion-button type="submit" (click)="onSubmit()" id="btn-submit" fill="solid" shape="round">
           INSCREVER-SE
         </ion-button>
       </ion-item>

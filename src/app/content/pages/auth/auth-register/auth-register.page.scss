@@ -1,35 +1,42 @@
-
-ion-header {
-    ion-toolbar {
-        --min-height: 30vh;
-        border-bottom-left-radius:50%;
-        border-bottom-right-radius:50%;
-        ion-buttons {
-            position: fixed;
-            top: 0;
-        }
-    }
-}
-
 ion-content{
-    --padding-start: 15px;
-    --padding-end: 15px;
+    .header{
+       width: 100%;
+       background-color: var(--ion-color-primary);
+       height: 35vh;
+       border-radius: 0% 0% 50% 50%;
+       ion-button {
+           padding-top: 10px;
+        color: #ffff;
+        ion-icon {
+            font-size: .6cm;
+            --ionicon-stroke-width: 64px !important;
+        }
+       }
+    }
     form {
         ion-list {
+            .item-form {
+              padding-left: 20px;
+              padding-right: 20px;
+              max-width: 400px;
+            }
             ion-item {
+                 margin-left: auto;
+                  margin-right: auto;
                 --inner-padding-end: 0px;
                 --highlight-height: 0;
+                .content-avatar {
+                    margin: auto;
                     ion-avatar {
                         width: 130px;
                         height: 130px;
-                        margin: auto;
+                        
                     }
                     #btn-avatar {
+                        margin-left: 75%;
+                        margin-top: -70%;
                         width: 35px;
                         height: 35px;
-                        position: fixed;
-                        margin-left: 30vh;
-                        margin-top: 12vh;
                         --border-radius: 50%;
                         --background: var(--ion-color-dark-shade);
                         ion-icon{
@@ -38,7 +45,8 @@ ion-content{
                         }
                       
                     }
-                        ion-row {
+                }
+                ion-row {
                             ion-col {
                                 .icon-content{
                                     width: 10px;
@@ -59,10 +67,13 @@ ion-content{
                                 }
                             }
                         }
+
                 #btn-submit {
                     --background: var(--ion-color-dark-shade);
                     min-height: 40px;
-                    width: 100%;
+                    width: 90%;
+                    margin: auto;
+                    padding-top: 10;
                 }
             }
         }

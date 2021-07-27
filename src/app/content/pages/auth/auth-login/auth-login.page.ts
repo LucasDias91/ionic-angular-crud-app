@@ -14,7 +14,8 @@ export class AuthLoginPage implements OnInit {
   loadingAfterSubmit: boolean = false;
   errorMsg: string = '';
 
-  constructor(private navController: NavController) { }
+  constructor(private navController: NavController,
+    ) { }
 
   ngOnInit() {
     this.resizeObservable$ = fromEvent(window, 'resize')
