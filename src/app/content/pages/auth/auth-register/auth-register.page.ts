@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { NavController } from '@ionic/angular';
 import { Register } from 'src/app/core/models/authentication/register';
 
 @Component({
@@ -10,7 +11,8 @@ import { Register } from 'src/app/core/models/authentication/register';
 export class AuthRegisterPage implements OnInit {
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder,
+             private navController: NavController) { }
 
   ngOnInit() {
     this.createForm();
@@ -38,6 +40,10 @@ export class AuthRegisterPage implements OnInit {
   prepareRegister() {
     const _resgister = new Register();
     
+  }
+
+  goBack() {
+    this.navController.back();
   }
 
 }

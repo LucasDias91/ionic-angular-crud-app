@@ -47,12 +47,14 @@ ion-content{
                     }
                 }
                 ion-row {
+                    width: 100%;
                             ion-col {
                                 .icon-content{
                                     width: 10px;
                                 }
                                 ion-input {
-                                    font-size: 0.9rem;;
+                                    font-size: 0.9rem;
+
                                 }
                                 ion-label {
                                     color: var( --ion-color-dark);

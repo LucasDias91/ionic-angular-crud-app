@@ -6,7 +6,7 @@
         <ion-grid class="ion-no-padding">
           <ion-row class="ion-no-padding">
             <div class="header">
-            <ion-button fill="clear">
+            <ion-button fill="clear" (click)="goBack()">
               <ion-icon name="chevron-down-outline"></ion-icon>
             </ion-button>
             </div>
@@ -27,11 +27,11 @@
 
       </ion-item>
       <ion-item class="ion-no-padding item-form">
-        <ion-row class="ion-no-padding">
-          <ion-col class="icon-content" size="2" class="ion-no-padding">
+        <ion-row  class="ion-no-padding">
+          <ion-col class="icon-content" size="1" class="ion-no-padding" >
             <ion-icon name="person-outline"></ion-icon>
           </ion-col>
-          <ion-col size="10" class="ion-no-padding ion-align-self-center">
+          <ion-col size="11"  class="ion-no-padding ion-align-self-center" >
             <ion-label mode="md" position="stacked">NOME</ion-label>
             <ion-input formControlName="email" type="email"></ion-input>
           </ion-col>
@@ -39,10 +39,10 @@
       </ion-item>
       <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
-          <ion-col size="2" class="ion-no-padding">
+          <ion-col size="1" class="ion-no-padding">
             <ion-icon name="mail-outline"></ion-icon>
           </ion-col>
-          <ion-col size="10" class="ion-no-padding ion-align-self-center">
+          <ion-col size="11" class="ion-no-padding ion-align-self-center"  class="ion-no-padding">
             <ion-label mode="md" position="stacked">EMAIL</ion-label>
             <ion-input formControlName="email" type="email"></ion-input>
           </ion-col>
@@ -50,10 +50,10 @@
       </ion-item>
       <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
-          <ion-col size="2" class="ion-no-padding">
+          <ion-col size="1" class="ion-no-padding">
             <ion-icon name="lock-closed-outline"></ion-icon>
           </ion-col>
-          <ion-col size="10" class="ion-no-padding ion-align-self-center">
+          <ion-col size="11" class="ion-no-padding ion-align-self-center">
             <ion-label mode="md" position="stacked">SENHA</ion-label>
             <ion-input formControlName="password" type="password"></ion-input>
           </ion-col>
@@ -61,16 +61,16 @@
       </ion-item>
       <ion-item class="ion-no-padding item-form">
         <ion-row class="ion-no-padding">
-          <ion-col size="2" class="ion-no-padding">
+          <ion-col size="1" class="ion-no-padding">
             <ion-icon name="lock-closed-outline"></ion-icon>
           </ion-col>
-          <ion-col size="10" class="ion-no-padding ion-align-self-center">
+          <ion-col size="11" class="ion-no-padding ion-align-self-center">
             <ion-label mode="md" position="stacked">CONFIRME A SENHA</ion-label>
             <ion-input formControlName="confirm_password" type="password"></ion-input>
           </ion-col>
         </ion-row>
       </ion-item>
-      <ion-item style="padding-top: 30px; padding-right: 0px;" class="ion-no-padding ion-text-center item-form" lines="none">
+      <ion-item style="padding-top: 30px;" class="ion-no-padding ion-text-center item-form" lines="none">
         <ion-button type="submit" (click)="onSubmit()" id="btn-submit" fill="solid" shape="round">
           INSCREVER-SE
         </ion-button>
