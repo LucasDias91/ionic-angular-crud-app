@@ -1,45 +1,47 @@
 <ion-content color="light">
   <ion-grid class="ion-no-padding">
-    <ion-row >
+    <ion-row>
       <ion-col [size]="size" class="ion-no-padding">
         <div class="image" [ngStyle]="{'opacity': loadingAfterSubmit ? '0.7' : '1' }"></div>
       </ion-col>
       <ion-col [size]="size">
-        <div class="auth-content" >
-          <div class="auth-login">
+        <div class="auth-content">
+          <form class="auth-login" [formGroup]="form">
             <ion-list>
               <div *ngIf="loadingAfterSubmit" class="centered">
                 <div class="loader"></div>
               </div>
-           
               <ion-item class="email">
-                <ion-label  mode="md" position="stacked">Email:</ion-label>
-                <ion-input  [disabled]="loadingAfterSubmit" type="email"></ion-input>
+                <ion-label mode="md" position="stacked">Email:</ion-label>
+                <ion-input formControlName="username" [disabled]="loadingAfterSubmit" type="email"></ion-input>
               </ion-item>
               <ion-item>
-                <ion-label  mode="md" position="stacked">Senha:</ion-label>
-                <ion-input  [disabled]="loadingAfterSubmit" type="password"></ion-input>
+                <ion-label mode="md" position="stacked">Senha:</ion-label>
+                <ion-input formControlName="password" [disabled]="loadingAfterSubmit" type="password"></ion-input>
               </ion-item>
               <ion-item class="actions" lines="none">
                 <div class="msg" *ngIf="errorMsg">
-                {{errorMsg}}
+                  {{errorMsg}}
                 </div>
                 <ion-checkbox [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
-                <ion-label class="remember-password"  [hidden]="errorMsg">Lembrar senha</ion-label>
-                <a  [hidden]="errorMsg"  href="javascript:void(0)" (click)="resetPassword()" class="forgot-password"> Esqueceu sua senha? </a>
+                <ion-label class="remember-password" [hidden]="errorMsg">Lembrar senha</ion-label>
+                <a [hidden]="errorMsg" href="javascript:void(0)" (click)="resetPassword()" class="forgot-password">
+                  Esqueceu sua senha? </a>
               </ion-item>
             </ion-list>
             <div class="submit">
-              <ion-button [disabled]="loadingAfterSubmit" (click)="login()" mode="md" type="submit" color="primary" shape="round">
+              <ion-button [disabled]="loadingAfterSubmit" (click)="onSubmit()" mode="md" type="submit" color="primary"
+                shape="round">
                 Entrar
               </ion-button>
             </div>
             <div class="register">
-              <ion-button [disabled]="loadingAfterSubmit"  mode="md" (click)="register()"  type="button" shape="round" fill="clear">
+              <ion-button [disabled]="loadingAfterSubmit" mode="md" (click)="register()" type="button" shape="round"
+                fill="clear">
                 Inscrever-se
               </ion-button>
             </div>
-          </div>
+          </form>
         </div>
       </ion-col>
     </ion-row>
