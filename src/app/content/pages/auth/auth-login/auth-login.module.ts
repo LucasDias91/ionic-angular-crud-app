@@ -16,6 +16,7 @@ import { AuthLoginPage } from './auth-login.page';
     ReactiveFormsModule,
     AuthLoginPageRoutingModule
   ],
-  declarations: [AuthLoginPage]
+  declarations: [AuthLoginPage],
+  providers: []
 })
 export class AuthLoginPageModule {}

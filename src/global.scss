@@ -39,6 +39,41 @@
     font-family: 'Open Sans' !important;
   }
 
+  .swal2-popup {
+    font-size: 0.8rem !important;
+    font-family: 'Open Sans' !important;
+  }
+
+  .vertical-buttons {
+    flex-direction: column;
+  }
+  
+  .top-margin {
+    margin-top: .5em;
+  }
+
+  .swal-footer{
+    overflow: auto;
+  }
+  
+  .swal-button-container{
+    float: right;
+  }
+  
+
+  .loadingClass {
+    font-family: 'Open Sans' !important;
+    font-size: 0.4cm;
+    color: #383a3e !important;
+    font-weight: 500;
+  }
+
+  .container{
+    background-color: red !important;
+    font-size: 60px !important;
+    text-align: left;
+  }
+
   .centered {
     position: fixed;
     top: 50%;

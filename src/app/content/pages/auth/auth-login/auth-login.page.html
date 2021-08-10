@@ -1,20 +1,18 @@
-<ion-content color="light">
+<ion-content color="light" [ngStyle]="{'opacity': this.loadingService.isLoading ? '0' : '1' }">
   <ion-grid class="ion-no-padding">
     <ion-row>
       <ion-col [size]="size" class="ion-no-padding">
-        <div class="image" [ngStyle]="{'opacity': loadingAfterSubmit ? '0.7' : '1' }"></div>
+        <div class="image"></div>
       </ion-col>
       <ion-col [size]="size">
         <div class="auth-content">
           <form class="auth-login" [formGroup]="form">
             <ion-list>
-              <div *ngIf="loadingAfterSubmit" class="centered">
-                <div class="loader"></div>
-              </div>
               <ion-item class="email">
                 <ion-label mode="md" position="stacked">Email:</ion-label>
-                <ion-input formControlName="username" [disabled]="loadingAfterSubmit" type="email"></ion-input>
+                <ion-input formControlName="email" [disabled]="loadingAfterSubmit" type="email"></ion-input>
               </ion-item>
+              <span style="margin-left: 15px; margin-top: -10px; font-size: 15px" *ngIf>Email não é válido</span>
               <ion-item>
                 <ion-label mode="md" position="stacked">Senha:</ion-label>
                 <ion-input formControlName="password" [disabled]="loadingAfterSubmit" type="password"></ion-input>
@@ -23,8 +21,8 @@
                 <div class="msg" *ngIf="errorMsg">
                   {{errorMsg}}
                 </div>
-                <ion-checkbox [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
-                <ion-label class="remember-password" [hidden]="errorMsg">Lembrar senha</ion-label>
+                <ion-checkbox formControlName="keep_login" [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
+                <ion-label class="remember-password"   [hidden]="errorMsg">Manter logado</ion-label>
                 <a [hidden]="errorMsg" href="javascript:void(0)" (click)="resetPassword()" class="forgot-password">
                   Esqueceu sua senha? </a>
               </ion-item>

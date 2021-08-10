@@ -1,5 +1,7 @@
 export class Login {
-    grant_type: string;
-    username: string;
+    grantType: string;
+    email: string;
     password: string;
+    refreshToken: string;
+    keep_login: boolean;
 }
