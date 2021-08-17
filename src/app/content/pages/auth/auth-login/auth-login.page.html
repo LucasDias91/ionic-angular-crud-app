@@ -22,14 +22,14 @@
                 <div class="msg" *ngIf="errorMsg">
                   {{errorMsg}}
                 </div>
-                <ion-checkbox formControlName="keep_login" [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
-                <ion-label class="remember-password"   [hidden]="errorMsg">Manter logado</ion-label>
+                <ion-checkbox  [disabled]="loadingAfterSubmit" mode="md" [hidden]="errorMsg"></ion-checkbox>
+                <ion-label class="remember-password"   [hidden]="errorMsg">Lembrar senha</ion-label>
                 <a [hidden]="errorMsg" href="javascript:void(0)" (click)="resetPassword()" class="forgot-password">
                   Esqueceu sua senha? </a>
               </ion-item>
             </ion-list>
             <div class="submit">
-              <ion-button [disabled]="loadingAfterSubmit" (click)="onSubmit()" mode="md" type="submit" color="primary"
+              <ion-button [disabled]="loadingAfterSubmit || this.form.invalid" (click)="onSubmit()" mode="md" type="submit" color="primary"
                 shape="round">
                 Entrar
               </ion-button>

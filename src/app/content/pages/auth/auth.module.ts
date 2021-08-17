@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { AuthPageRoutingModule } from './auth-routing.module';
 
 import { AuthPage } from './auth.page';
+import { Camera } from '@ionic-native/camera/ngx';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { AuthPage } from './auth.page';
     IonicModule,
     AuthPageRoutingModule
   ],
-  declarations: [AuthPage]
+  declarations: [AuthPage],
+  providers: [Camera]
 })
 export class AuthPageModule {}

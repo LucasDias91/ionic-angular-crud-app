@@ -1,12 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { ModalController, NavController } from '@ionic/angular';
 import { fromEvent, Observable, Subscription } from 'rxjs';
 import { finalize } from 'rxjs/operators';
 import { Login } from 'src/app/core/models/authentication/login';
+import { Register } from 'src/app/core/models/authentication/register';
 import { AuthenticationService } from 'src/app/core/services/auth/authentication.service';
 import { LoadingService } from 'src/app/core/services/loading/loading.service';
 import { SweetAlertService } from 'src/app/core/services/sweetAlert/sweet-alert.service';
+import { AuthRegisterPage } from '../auth-register/auth-register.page';
 
 let _subscritions$: Subscription[] = [];
 
@@ -27,7 +29,8 @@ export class AuthLoginPage implements OnInit, OnDestroy {
     private fb: FormBuilder,
     private authService: AuthenticationService,
     public loadingService: LoadingService,
-    private sweetAlertService: SweetAlertService) { }
+    private sweetAlertService: SweetAlertService,
+    private modalCtrl: ModalController) { }
 
   ngOnInit() {
     this.createForm();
@@ -55,7 +58,6 @@ export class AuthLoginPage implements OnInit, OnDestroy {
     }
 
     const login = this.prepareLogin();
-    console.log(login)
     this.login(login)
 
   }
@@ -89,8 +91,23 @@ export class AuthLoginPage implements OnInit, OnDestroy {
     return login;
   }
 
-  register() {
-    this.navController.navigateForward(['auth/register'])
+ async register() {
+    //this.navController.navigateForward(['auth/register'])
+    const modal = await this.modalCtrl.create({
+      component: AuthRegisterPage,
+     // cssClass: 'my-custom-class'
+    });
+    modal.onDidDismiss()
+      .then((data) => {
+        if(!data['data']) {
+          return;
+        }
+        const register: Register = data['data']; // Here's your selected user!
+        this.form.get('email').setValue(register.email);
+        this.form.get('password').setValue(register.password);
+        this.onSubmit();
+    });
+    return await modal.present();
   }
 
   resetPassword() {

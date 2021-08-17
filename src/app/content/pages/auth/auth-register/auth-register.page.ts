@@ -7,6 +7,7 @@ import { Register } from 'src/app/core/models/authentication/register';
 import { AuthenticationService } from 'src/app/core/services/auth/authentication.service';
 import { LoadingService } from 'src/app/core/services/loading/loading.service';
 import { Camera, PictureSourceType, CameraOptions } from '@ionic-native/camera/ngx';
+import { SweetAlertService } from 'src/app/core/services/sweetAlert/sweet-alert.service';
 
 let subscriptions$: Subscription[] = [];
 
@@ -24,7 +25,8 @@ export class AuthRegisterPage implements OnInit, OnDestroy {
     private modalCtrl: ModalController,
     private loadingService: LoadingService,
     private actionSheetController: ActionSheetController,
-    private camera: Camera) { }
+    private camera: Camera,
+    private sweetAlertService: SweetAlertService) { }
 
   ngOnInit() {
     this.createForm();
@@ -61,7 +63,7 @@ export class AuthRegisterPage implements OnInit, OnDestroy {
                    .subscribe((accessData)=>{
                      this.modalCtrl.dismiss(register);
                    },()=>{
-
+                   this.sweetAlertService.presentAlert(null,'Não foi possivel criar a conta. Entre em contato com o Lucas Dias!')
                    })
     )
   }
@@ -110,7 +112,7 @@ export class AuthRegisterPage implements OnInit, OnDestroy {
   prepareRegister() {
     const register = new Register();
     const controls = this.form.controls;
-    register.avatar = controls.avatar.value;
+    register.avatar64 = controls.avatar64.value;
     register.name = controls.name.value;
     register.email = controls.email.value;
     register.password = controls.password.value;

@@ -1,5 +1,5 @@
 export class Register {
-    avatar: string;
+    avatar64: string;
     name: string;
     email: string;
     password: string;
