@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'https://localhost:44392',
+  //apiUrl: 'https://apicurso.magically.com.br'
 };
 
 /*
